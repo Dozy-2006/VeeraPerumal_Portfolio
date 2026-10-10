@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #F8F8F6;
+    --text-primary: #171717;
+    --text-secondary: #5A5A58;
+    --text-muted: #8E8E8A;
+    --border-subtle: #E5E5E0;
+    --border-card: #ECECE7;
+    --accent: #3158A8;
+    --accent-hover: #264689;
+    --accent-subtle: #EEF3FA;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F8F8F6;
+    color: #171717;
+    min-height: 100vh;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom utility classes & styling */
+.editorial-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(23, 23, 23, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.03) 1px, transparent 1px);
+}
+
+.subtle-dot-grid {
+  background-size: 16px 16px;
+  background-image: radial-gradient(rgba(23, 23, 23, 0.08) 1px, transparent 0);
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #3158A8;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
